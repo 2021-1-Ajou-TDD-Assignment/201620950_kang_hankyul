@@ -29,4 +29,14 @@ public class BowlingGameTest {
 		rollMany(20, 1);
 		assertEquals(20, g.score());
 	}
+	
+	@Ignore("until we get design right")
+	@Test
+	public void testOneSpare() {
+		g.roll(5);
+		g.roll(5); // spare
+		g.roll(3);
+		rollMany(17, 0);
+		assertEquals(16, g.score());
+	}
 }
